@@ -2,12 +2,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 // Импорт страниц
-import Home from '@/App.vue'
-import AddReview from '@/AddReview.vue'
+import Home from '@/pages/Home.vue'
+import ReviewForm from '@/ReviewForm.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
-  { path: '/add-review', name: 'AddReview', component: AddReview }
+  { path: '/add-review', name: 'ReviewForm', component: ReviewForm }
 ]
 
 const router = createRouter({
