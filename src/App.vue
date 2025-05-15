@@ -8,7 +8,7 @@
       <nav class="flex gap-8 text-gray-700">
         <a href="#">Категории</a>
         <a href="#">Топ компаний</a>
-        <a href="#">Написать отзыв</a>
+        <RouterLink to="/add-review">Написать отзыв</RouterLink>
         <a href="#">О нас</a>
       </nav>
       <div class="flex gap-4">
