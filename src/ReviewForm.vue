@@ -7,13 +7,15 @@
           v-for="star in 5"
           :key="star"
           @click="rating = star"
-          class="text-2xl focus:outline-none"
-          :class="star <= rating ? 'text-yellow-400' : 'text-gray-300'"
+          @mouseenter="hover = star"
+          @mouseleave="hover = 0"
+          class="w-10 h-10 flex items-center justify-center text-2xl font-bold transition hover:scale-110"
+          :class="(hover || rating) >= star ? 'bg-orange-400' : 'bg-gray-200'"
         >
           ★
         </button>
-        <span class="ml-2 text-sm text-gray-600">
-          {{ rating > 0 ? `${rating} из 5` : 'Без оценки' }}
+        <span class="ml-2 text-sm text-gray-700">
+            {{ currentPhrase }}
         </span>
       </div>
   
@@ -37,11 +39,16 @@
   </template>
   
   <script setup>
-  import { ref } from 'vue'
+  import { ref, computed } from 'vue'
   
   const rating = ref(0)
+  const hover = ref(0)
   const text = ref('')
-  
+  const phrases = ['Ужасно', 'Плохо', 'Окей', 'Хорошо', 'Отлично']
+  const currentPhrase = computed(() => {
+        const index = (hover.value || rating.value) - 1
+        return index >= 0 ? phrases[index] : 'Без оценки'
+    })
   function submitReview() {
     if (text.value.length < 85) {
       alert('Отзыв должен содержать минимум 85 символов.')

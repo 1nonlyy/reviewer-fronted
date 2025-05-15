@@ -16,7 +16,7 @@
         <button class="bg-gradient-to-r from-blue-400 to-pink-400 text-white rounded px-4 py-2">Регистрация</button>
       </div>
     </header>
-    <router-view />
+    <router-view/>
 
     <!-- Footer -->
     <footer class="border rounded py-8 bg-gray-100 text-sm text-gray-600">
