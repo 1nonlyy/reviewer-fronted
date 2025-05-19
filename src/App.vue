@@ -1,21 +1,17 @@
 <template>
-  <div class="max-w-7xl mx-auto px-4">
+  <div class="w-full">
+    <Navbar />
+  </div>
+
+
+  <div class="max-w-8xl mx-auto px-4">
     <!-- Header -->
-    <header class="flex justify-between items-center p-4 shadow-sm">
-      <div class="text-2xl font-bold">
-        <span class="text-blue-500">True</span><span class="text-pink-500">Reviews</span>
-      </div>
-      <nav class="flex gap-8 text-gray-700">
-        <a href="#">Категории</a>
-        <a href="#">Топ компаний</a>
-        <RouterLink to="/add-review">Написать отзыв</RouterLink>
-        <a href="#">О нас</a>
-      </nav>
-      <div class="flex gap-4">
-        <button class="border rounded px-4 py-2">Войти</button>
-        <button class="bg-gradient-to-r from-blue-400 to-pink-400 text-white rounded px-4 py-2">Регистрация</button>
-      </div>
-    </header>
+    <div class="bg-white rounded-lg shadow p-6">
+      <h1 class="text-2xl font-bold text-gray-900 mb-4">Welcome  Aiqyn</h1>
+      <p class="text-gray-700">
+        This is the home page content that will be displayed inside the container.
+      </p>
+    </div>
     <router-view/>
 
     <!-- Footer -->
@@ -55,7 +51,11 @@
 </template>
 
 <script>
+import Navbar from '@/components/Navbar.vue';
 export default {
+  components: {
+    Navbar
+  },
   data() {
     return {
       categories: ['Медицина', 'Госуслуги', 'Магазины', 'Отели', 'Автосервис', 'IT-сервисы', 'Рестораны', 'Туризм'],
